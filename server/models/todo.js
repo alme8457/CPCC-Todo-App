@@ -1,11 +1,15 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-const Todo = new Schema(
+
+const Bike = new Schema(
   {
     task: { type: String, required: true },
   },
-  { timestamps: true }
+  { 
+    make: string,
+    model: string 
+  }
 )
 
-module.exports = mongoose.model("todos", Todo)
+module.exports = mongoose.model("bikes", Bike)

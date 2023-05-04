@@ -1,4 +1,4 @@
-const Todo = require("../models/todo")
+const Bike = require("../models/todo")
 
 /**
  *
@@ -10,7 +10,7 @@ const Todo = require("../models/todo")
  * <document>.save()
  *
  */
-createTodo = async (req, res) => {
+createBike = async (req, res) => {
   return res.status(500).json({ success: false })
 }
 
@@ -22,8 +22,12 @@ createTodo = async (req, res) => {
  * const documents = await <model>.find({})
  *
  */
-getTodos = async (req, res) => {
-  return res.status(500).json({ success: false })
+getBikes = async (req, res) => { // Mongoose API
+  const arr = await Bike.find(); //MongoDB
+  if(arr.length > 0 ){
+    return res.send({data: arr})
+  }
+  return res.status(404).json({ success: true })
 }
 
 /**
@@ -34,7 +38,7 @@ getTodos = async (req, res) => {
  * const documents = await <model>.findOneAndUpdate({ _id: <id to update>}, {task: 'updated value'})
  *
  */
-updateTodo = async (req, res) => {
+updateBike = async (req, res) => {
   return res.status(500).json({ success: false })
 }
 
@@ -46,13 +50,13 @@ updateTodo = async (req, res) => {
  * const documents = await <model>.findOneAndDelete({ _id: <id to update>})
  *
  */
-deleteTodo = async (req, res) => {
+deleteBike = async (req, res) => {
   return res.status(500).json({ success: false })
 }
 
 module.exports = {
-  createTodo,
-  getTodos,
-  updateTodo,
-  deleteTodo,
+  createBike,
+  getBikes,
+  updateBike,
+  deleteBike,
 }

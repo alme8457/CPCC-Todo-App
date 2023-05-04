@@ -5,15 +5,15 @@ const TodoController = require("../controllers/todo")
 const router = express.Router()
 
 // Create
-router.post("/todo", TodoController.createTodo)
+router.post("/Getbikes", TodoController.createBike)
 
 // Read
-router.get("/todos", TodoController.getTodos)
+router.get("/bikes", TodoController.getBikes)
 
 // Update
-router.put("/todo/:id", TodoController.updateTodo)
+router.put("/bike/:id", TodoController.updateBike)
 
 // Delete
-router.delete("/todo/:id", TodoController.deleteTodo)
+router.delete("/bike/:id", TodoController.deleteBike)
 
 module.exports = router
